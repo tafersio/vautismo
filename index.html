@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estimador de Sopaipillas 🍴</title>
+  <title>Estimador de Sopaipillas </title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -58,7 +58,7 @@
 </head>
 <body>
 
-  <h1>🍽 Calculadora de Sopaipillas</h1>
+  <h1> Estimador de Sopaipillas</h1>
   <div class="container">
     <p>Ingresa el dinero que tienes (pesos chilenos):</p>
     <input type="number" id="monto" placeholder="su monto">
@@ -67,7 +67,7 @@
   </div>
 
   <script>
-    const precioSopaipilla = 300; // 💰 Cambia este valor si el precio varía
+    const precioSopaipilla = 300; 
 
     function calcular() {
       const monto = parseFloat(document.getElementById("monto").value);
@@ -81,9 +81,10 @@
       const cantidad = Math.floor(monto / precioSopaipilla);
       const resto = monto % precioSopaipilla;
 
-      resultado.textContent = `Con $${monto.toLocaleString('es-CL')} puedes comprar ${cantidad} sopaipilla${cantidad !== 1 ? 's' : ''}.`;
+      resultado.textContent = `Con $${monto.toLocaleString('es-CL')} puedes comprar ${cantidad} sopaipilla${cantidad !== 1 ? 's' : ''}. Saludos al dogo`;
     }
   </script>
 
 </body>
+
 </html>
