@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estimador de Sopaipillas 🍴</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffe8b3, #ffcc66);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      color: #d4881d;
+      text-shadow: 1px 1px 2px #fff;
+    }
+    .container {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 300px;
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 1em;
+      border: 2px solid #ff9933;
+      border-radius: 10px;
+      text-align: center;
+    }
+    button {
+      background-color: #ff9933;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e67e00;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #663300;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🍽 Calculadora de Sopaipillas</h1>
+  <div class="container">
+    <p>Ingresa el dinero que tienes (pesos chilenos):</p>
+    <input type="number" id="monto" placeholder="su monto">
+    <button onclick="calcular()">Calcular</button>
+    <p id="resultado"></p>
+  </div>
+
+  <script>
+    const precioSopaipilla = 300; // 💰 Cambia este valor si el precio varía
+
+    function calcular() {
+      const monto = parseFloat(document.getElementById("monto").value);
+      const resultado = document.getElementById("resultado");
+
+      if (isNaN(monto) || monto <= 0) {
+        resultado.textContent = "Por favor ingresa un monto válido 💸";
+        return;
+      }
+
+      const cantidad = Math.floor(monto / precioSopaipilla);
+      const resto = monto % precioSopaipilla;
+
+      resultado.textContent = `Con $${monto.toLocaleString('es-CL')} puedes comprar ${cantidad} sopaipilla${cantidad !== 1 ? 's' : ''}.`;
+    }
+  </script>
+
+</body>
+</html>
